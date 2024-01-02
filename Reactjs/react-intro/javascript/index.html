@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+
+<body>
+
+    <h2>heading 1</h2>
+    <h2 id="head2">heading 2 <b>closest</b></h2>
+    <h2>heading 3</h2>
+
+    <input type="text">
+
+    <form>
+        <button>submit</button>
+    </form>
+
+    <script>
+
+        // ES5
+
+        // var a = 12;
+
+        // alert(typeof a); // sweet alert
+        // console.log(typeof a);
+        // document.write(typeof a);
+
+        // conditional statement
+
+        // var score = 'A';
+        // score = 'D';
+
+        // var map_score = { A: 'Good', B: 'Not Bad', c: 'bad' };
+
+        // console.log(map_score[score] || 'Vary Bad');
+
+        // loop
+
+        // for, while, do while
+
+        // function
+
+        // function sayHi(name) {
+        //     console.log(name);
+        // }
+
+        // sayHi('pouriya');
+
+        // declaration
+
+        // function sayHi(name) {
+        //     console.log(name);
+        // }
+
+        // sayHi('pouriya', cb);
+        // sayHi('pouriya', cb()); // called cb
+
+        // function cb(family) {
+        //     console.log(family);
+        // }
+
+        // expression
+
+        // function sayHi(name) {
+        //     console.log(name);
+        // }
+
+        // sayHi('pouriya', function (family) { console.log(family); });
+
+        // arrow
+
+        // function sayHi(name) {
+        //     console.log(name);
+        // }
+
+        // sayHi('pouriya', (family) => { console.log(family); });
+
+        // declaration
+
+        // function sayHi(name, cb) {
+
+        //     var family = typeof cb === 'function' && cb('sedaghat');
+        //     console.log(name + ' ' + family);
+
+        // }
+
+        // sayHi('pouriya', cb);
+
+        // function cb(family) {
+        //     return family;
+        // }
+
+        // expression
+
+        // function sayHi(name, cb) {
+
+        //     var family = typeof cb === 'function' && cb('sedaghat');
+        //     console.log(name + ' ' + family);
+
+        // }
+
+        // sayHi('pouriya', function (family) { return family; });
+
+        // arrow
+
+        // function sayHi(name, cb) {
+
+        //     var family = typeof cb === 'function' && cb('sedaghat');
+        //     console.log(name + ' ' + family);
+
+        // }
+
+        // sayHi('pouriya', family => family );
+
+        // this
+
+        // console.log(this); // Window
+
+        // function sayHi() {
+        //     console.log(this);
+        // }
+
+        // sayHi(); // Window
+
+        // function sayHi() {
+        //     console.log(this);
+        //     console.log(this.name, this.family);
+        // }
+
+        // sayHi.call({ name: 'pouriya', family: 'sedaghat' }); // object  and output is function called
+        // sayHi.apply({ name: 'pouriya', family: 'sedaghat' }); // object and output is function called
+        // var fun = sayHi.bind({ name: 'pouriya', family: 'sedaghat' }); // object and output is function
+        // fun();
+
+        // string methods
+
+        // var text = 'pouriya';
+
+        // text.length
+        // console.log(text.length); // 7
+
+        // text.indexOf('a');
+        // console.log(text.indexOf('a')); // 6
+        // console.log(text.indexOf('b')); // -1
+
+        // text.slice(0,2);
+        // console.log(text.slice(0,2)); // po
+        // console.log(text); // no effect to refrence
+
+        // text.split('o');
+        // console.log(text.split('o')); // string to array
+        // console.log(text); // no effect to refrence
+
+        // text.toUpperCase();
+        // console.log(text.toUpperCase());
+        // console.log(text); // no effect to refrence
+
+        // text.toLocaleLowerCase();
+        // console.log(text.toLocaleLowerCase());
+        // console.log(text); // no effect to refrence
+
+        // text.replace(0, 's');
+        // console.log(text.replace('p', 's'));
+        // console.log(text); // no effect to refrence
+
+        // text.charCodeAt(0);
+        // console.log(text.charCodeAt(0)); // 112
+        // console.log(text.charCodeAt(7)); //  have not 7 index : NaN
+
+        // String.fromCharCode(112);
+        // console.log(String.fromCharCode(112));
+
+        // text.concat(' sedaghat');
+        // console.log(text.concat(' sedaghat'));
+        // console.log(text); // no effect to refrence
+
+        // text = ' pouriya sedaghat ';
+        // text.trim();
+        // console.log(text.trim());
+        // console.log(text); // no effect to refrence
+
+        //  string to number
+
+        // var text = '1010';
+
+        // Number(text);
+        // console.log(Number(text));
+        // console.log(text); // no effect to refrence
+
+        // +text;
+        // console.log(+text);
+        // console.log(text); // no effect to refrence
+
+        // parseInt(text);
+        // console.log(parseInt(text));
+        // console.log(text); // no effect to refrence
+
+        // parseFloat(text);
+        // console.log(parseFloat(text));
+        // console.log(text); // no effect to refrence
+
+        // globle object window
+
+        // console.log(window);
+        // console.log(window.Math);
+        // console.log(Math);
+        // console.log(Math.ceil(1.2));
+        // console.log(Math.ceil('1.2'));
+        // console.log(Math.floor(1.2));
+        // console.log(Math.floor('1.2'));
+        // console.log(Math.round(1.4));
+        // console.log(Math.round('1.5'));
+        // console.log(Math.random());
+
+        // generate passwod OTP
+
+        // function Random(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
+
+        // const ASCII_CODE = {
+        //     number: { min: 48, max: 57 },
+        //     lowerCase: { min: 97, max: 122 },
+        //     upperCase: { min: 65, max: 90 }
+        // }
+
+        // function GENERATE_PASSWORD(type, count) {
+
+        //     var generated_password = '';
+
+        //     switch (type) {
+        //         case 'NUM': {
+        //             for (var i = 0; i < count; i++) {
+        //                 generated_password += String.fromCharCode(Random(ASCII_CODE.number.min, ASCII_CODE.number.max));
+        //             }
+        //             break;
+        //         }
+        //         case 'LOWER': {
+        //             for (var i = 0; i < count; i++) {
+        //                 generated_password += String.fromCharCode(Random(ASCII_CODE.lowerCase.min, ASCII_CODE.lowerCase.max));
+        //             }
+
+        //             break;
+        //         }
+        //         case 'UPPER': {
+        //             for (var i = 0; i < count; i++) {
+        //                 generated_password += String.fromCharCode(Random(ASCII_CODE.upperCase.min, ASCII_CODE.upperCase.max));
+        //             }
+
+        //             break;
+        //         }
+        //         case 'MIX': {
+        //             var keys = Object.keys(ASCII_CODE);
+        //             for (var i = 0; i < count; i++) {
+        //                 var key = keys[Random(0, keys.length - 1)];
+        //                 generated_password += String.fromCharCode(Random(ASCII_CODE[key].min, ASCII_CODE[key].max));
+        //             }
+
+        //             break;
+        //         }
+        //         default: {
+        //             return 'type ii invalid';
+        //         }
+        //     }
+        //     return generated_password;
+        // }
+
+        // console.log(GENERATE_PASSWORD('NUM', 6));
+        // console.log(GENERATE_PASSWORD('LOWER', 6));
+        // console.log(GENERATE_PASSWORD('UPPER', 6));
+        // console.log(GENERATE_PASSWORD('MIX', 6));
+
+        // number to string
+
+        // var num = 10;
+
+        // String(num);
+        // console.log(String(num));
+        // console.log(num);
+
+        // num = 10.23;
+
+        // num.toFixed(1);
+        // console.log(num.toFixed(1));
+        // console.log(num);
+
+        // array method
+
+        // array and object save by refrece
+
+        // var arr = ['apple', 'peach', 'banana'];
+
+        // arr.length;
+        // console.log(arr.length);
+
+        // arr.join(' ');
+        // console.log(arr.join(' ')); // aaray to srting
+
+        // Array.isArray(arr)
+        // console.log(Array.isArray(arr));
+
+        // arr.unshift('honey');
+        // console.log(arr.unshift('honey'));
+        // console.log(arr);
+
+        // arr.shift();
+        // console.log(arr.shift());
+        // console.log(arr);
+
+        // arr.push('khiyar');
+        // console.log(arr.push('khiyar'));
+        // console.log(arr);
+
+        // arr.pop();
+        // console.log(arr.pop());
+        // console.log(arr);
+
+        // arr.splice(0,2);
+        // console.log(arr.splice(0,2));
+        // console.log(arr);
+
+        // arr.sort();
+
+        // arr = [1, 5, 6, 7, 8, 5, 5];
+        // arr = ['a', 'b', 'aa', 'bb', 'c', 'cc']
+
+        // arr.sort((a, b) => a < b);
+        // console.log(arr);
+
+        // arr.reverse();
+        // console.log(arr);
+
+        // js selector
+
+        // console.log(document.querySelector('#head3')); // null
+
+        // document.querySelector('b').closest('#head2');
+
+        // events
+
+        // document.querySelector('input').addEventListener('blur', function () {
+        //     console.log('blur');
+        // });
+        // document.querySelector('input').addEventListener('focus', function () {
+        //     console.log('focus');
+        // });
+        // document.querySelector('input').addEventListener('input', function () {
+        //     console.log('input');
+        // });
+        // document.querySelector('input').addEventListener('change', function () {
+        //     console.log('change');
+        // });
+        // document.addEventListener('load', function () {
+        //     console.log('load');
+        // });
+        // document.addEventListener('unload', function () {
+        //     console.log('unload');
+        // });
+        // document.addEventListener('ready', function () {
+        //     console.log('ready');
+        // });
+        // document.addEventListener('resize', function () {
+        //     console.log('resize');
+        // });
+        // document.addEventListener('reset', function () {
+        //     console.log('reset');
+        // });
+        // document.addEventListener('scroll', function () {
+        //     console.log('scroll');
+        // });
+        // document.addEventListener('mousewheel', function () {
+        //     console.log('mousewheel');
+        // });
+        // document.querySelector('form').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     console.log('submit');
+        // });
+        // document.querySelector('input').addEventListener('mousemove', function (e) {
+        //     console.log('mousemove');
+        //     console.log(e.offsetX, e.offsetY);
+        //     console.log(e.pageX, e.pageY);
+        // });
+
+        // ES6
+
+        // let const
+
+        // globale scope
+
+        // for (var i = 0; i < 5; i++) {
+        //     console.log(i); // 0 1 2 3 4
+        // }
+
+        // console.log(i); // 5
+
+
+        // for (let i = 0; i < 5; i++) {
+        //     console.log(i); // 0 1 2 3 4
+        // }
+
+        // console.log(i); // error
+
+        // this in arrow
+
+        // const harchi = () => {
+        //     console.log(this);
+        // }
+
+        // harchi.call({ name: 'ali', family: 'kalantari' });
+        // harchi.apply({ name: 'ali', family: 'kalantari' });
+        // const func = harchi.bind({ name: 'ali', family: 'kalantari' });
+        // func();
+
+        // object
+
+        // const person = {
+        //     name: 'poriya',
+        //     family: 'sedaghat',
+        //     age: 23,
+        //     isDeath: false
+        // }
+
+        // const { name, family, ...other } = person;
+
+        // console.log(name, family, other);
+
+        // function
+
+        // function harchi(name, family, ...other) {
+        //     console.log(name, family, other);
+        // }
+
+        // harchi('pouriya', 'sedaghat', 23, false);
+
+        // array method
+
+        // const arr = ['peach', 'honey', 'banana', 'kiwi'];
+
+        // arr.forEach((item, index) => {
+        //     console.log(item, index);
+        // });
+
+        // const a = arr.map((item, index) => {
+        //     console.log(item, index);
+        //     return item + 1;
+        // });
+
+        // console.log(a);
+
+        // const a = arr.map((item, index) => {
+        //     console.log(item, index);
+        //     return item === 'peach';
+        // });
+
+        // console.log(a);
+
+        // const harchi = () => new Promise((resolve, reject) => {
+        //     let age = 18;
+        //     if (age >= 18) {
+        //         resolve('success');
+        //     } else {
+        //         reject('can not');
+        //     }
+        // });
+
+        // method : 1
+
+        // harchi()
+        // .then((response)=>{console.log(response);})
+        // .catch((err)=>{console.log(err);})
+
+        // method : 2
+
+        // async function a() {
+        //     try {
+        //         const response = await harchi();
+        //         console.log(response);
+        //     } catch (err) { console.log(err); }
+        // }
+
+        // a();
+
+        // class
+
+        // class Person {
+        //     name = 'pouriya';
+        //     family = 'sedaghat';
+        //     city = null;
+        //     fullname() {
+        //         console.log(this.name + ' ' + this.family);
+        //     }
+        //     age = function () { console.log(23) };
+        //     isDead = (num) => { console.log(num) };
+        // }
+
+        // const obj = new Person();
+
+        // console.log(obj);
+
+        // obj.hrachi = 'hrakas';
+        // console.log(obj);
+
+        // obj.city = 'tehren';
+        // console.log(obj);
+
+        // obj.fullname();
+        // obj.age();
+        // obj.isDead(false);
+
+        // input to class
+
+        // class Person {
+
+        //     constructor(eyeColor, sport, city) {
+        //         this.eyeColor = eyeColor;
+        //         this.sport = sport;
+        //         this.city = city;
+        //     }
+
+        //     name = 'pouriya';
+        //     family = 'sedaghat';
+        //     eyeColor = null;
+        //     sport = null;
+        //     city = null;
+
+        //     fullname() {
+        //         console.log(this.name + ' ' + this.family);
+        //     }
+        //     age = function () { console.log(23) };
+        //     isDead = (num) => { console.log(num) };
+        // }
+
+        // const obj = new Person('black', 'Kart racing', 'tehren');
+
+        // console.log(obj);
+
+        // use class in other class
+
+        // class Person {
+
+        //     constructor(eyeColor, sport, city) {
+        //         this.eyeColor = eyeColor;
+        //         this.sport = sport;
+        //         this.city = city;
+        //     }
+
+        //     name = 'pouriya';
+        //     family = 'sedaghat';
+        //     eyeColor = null;
+        //     sport = null;
+        //     city = null;
+
+        //     fullname() {
+        //         console.log(this.name + ' ' + this.family);
+        //     }
+        //     age = function () { console.log(23) };
+        //     isDead = (num) => { console.log(num) };
+        // }
+
+        // class DetailUser extends Person {
+        //     constructor(name, family, city) {
+        //         super(name, family, city);
+        //     }
+        //     age = 23;
+        // }
+
+        // const obj = new DetailUser();
+
+        // console.log(obj);
+
+    </script>
+</body>
+
+</html>

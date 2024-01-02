@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+</head>
+
+<body>
+
+    <h2>heading 1</h2>
+    <h2 id="head2">heading 2 <b>closest</b></h2>
+    <h2>heading 3</h2>
+
+    <input type="text">
+
+    <form>
+
+        <h2>detail user</h2>
+
+        <input type="text" id="name" placeholder="name">
+        <input type="text" id="family" placeholder="family">
+
+        <button>submit</button>
+    </form>
+
+    <!-- table -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- product by js -->
+
+        </tbody>
+    </table>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        // jquery
+
+        // console.log($);
+
+        // jquery has
+
+        // $('#haed2').has('b');
+        // console.log($('#head2').has('b')); // find  chiled or direct chiled 0: false 1: true
+
+        // jquery selector
+
+        // $('#head2').find('b').css({color:'red'});
+        // console.log($('#head2').find('b')); // select chiled
+
+        // $('b').closest('#head2').css({color:'red'});
+        // console.log($('b').closest('#head2')); // select parents
+
+        // $('b').parents('#head2').css({color:'red'});
+        // console.log($('b').parents('#head2')); // select parents
+
+        // $('b').parent('#head2').css({color:'red'});
+        // console.log($('b').parent('#head2')); // select parent
+
+        // jquery class 
+
+        // addClass() removeClass() toggleClass()
+
+        // user detail table
+
+        const $form = $('form');
+        const $table = $('table');
+        const $name = $('#name');
+        const $family = $('#family');
+
+        var name;
+        var family;
+        var html = '';
+
+        $form.on('submit', function (e) {
+
+            e.preventDefault();
+
+            // console.log($($table).find('tbody').find('tr').length);
+            // var id = $($table).find('tbody').find('tr').length;
+
+            if ($name.val() && $family.val()) {
+                name = $name.val();
+                family = $family.val();
+                $name.val('');
+                $family.val('');
+
+                // html = '<tr data-id="' + id + '"><td style="padding:0 5px;">' + name + '</td><td style="padding:0 5px;">' + family + '</td><td><button style="color:blue;margin:0px 5px;" class="edit">Edit</button><button style="color:red;margin:0px 5px;" class="delete">Delete</button></td></tr>';
+                html = '<tr><td style="padding:0 5px;">' + name + '</td><td style="padding:0 5px;">' + family + '</td><td><button style="color:blue;margin:0px 5px;" class="edit">Edit</button><button style="color:red;margin:0px 5px;" class="delete">Delete</button></td></tr>';
+
+                $table.find('tbody').append(html);
+            } else {
+                $name.val('');
+                $family.val('');
+                alert('Please, Enter your Name Or Family');
+            }
+
+            $table.find('tbody').on('click', '.edit', function () {
+
+                // console.log('Edit');
+                // console.log(this); // DOM NODE
+                // console.log($(this)); // jquery object
+                // console.log(this.classList);
+                // console.log(this.closest('tr').cells[0].textContent);
+                // const ta = $(this).closest('tr').data('id');
+                // const ta = $(this).closest('tr').attr('data-id');
+
+                $(this).closest('tr').find('td:first-child').text(prompt('Enter Your Name :', $(this).closest('tr').find('td:first-child').text()));
+                $(this).closest('tr').find('td:nth-child(2)').text(prompt('Enter Your family :', $(this).closest('tr').find('td:nth-child(2)').text()));
+
+            });
+
+            $table.find('tbody').on('click', '.delete', function () {
+
+                // console.log('Delete');
+                // console.log(this); // DOM NODE
+                // console.log($(this)); // jquery object
+                // console.log(this.classList);
+
+                $(this).closest('tr').remove();
+
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
